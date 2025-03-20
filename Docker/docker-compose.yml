@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: acme-sale-system-app
+    working_dir: /app
+    volumes:
+      - .:/app
+    tty: true
+
+  phpunit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: acme-sale-system-phpunit
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: composer test
+
+  phpstan:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: acme-sale-system-phpstan
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: composer analyse
