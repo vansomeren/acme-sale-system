@@ -1,0 +1,18 @@
+# Ignore Composer dependencies
+/vendor/
+
+# Ignore IDE-specific files
+.idea/
+*.iml
+
+# Ignore environment files
+.env
+
+# Ignore PHPUnit cache
+.phpunit.result.cache
+
+# Ignore Composer lock file (optional, but not recommended)
+# composer.lock
+
+# Ignore Docker-related files (if not needed)
+docker-compose.override.yml
